@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="Proje2.View.EgzersizEkrani"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="600">
+    <Grid Background="#80000000">
+        <Border Background="#CC1C1C1C" CornerRadius="20" Margin="30" Padding="20" BorderBrush="#7F00FF" BorderThickness="2">
+            <TabControl Background="Transparent" BorderThickness="0"
+                        FontWeight="SemiBold" Foreground="White">
+
+                <!-- TAB 1: Egzersiz Yönetimi -->
+                <TabItem Header="Egzersiz Yönetimi" FontSize="15">
+                    <StackPanel Margin="20">
+                        <TextBlock Text="Egzersiz Yönetimi" FontSize="22" FontWeight="Bold"
+                                   Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                        <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                            <Label Content="Egzersiz Adı:" Foreground="White"/>
+                            <TextBox x:Name="txtEgzersizAdi" Height="30" Margin="0,5,0,10" Background="White" Foreground="Black" BorderBrush="#7F00FF" BorderThickness="1"/>
+
+                            <Label Content="Kas Grubu Seçin:" Foreground="White"/>
+                            <ComboBox x:Name="cmbKasGrubu" Height="30" Margin="0,5" Background="White" Foreground="Black" BorderBrush="#7F00FF" BorderThickness="1"/>
+                        </StackPanel>
+
+                        <!-- Egzersiz Ekle/Sil Butonları -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,20">
+                            <Button Content="Ekle"
+                                    Width="100"
+                                    Margin="5"
+                                    Height="30"
+                                    Background="#7F00FF"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    Click="EkleEgzersiz_Click"
+                                    BorderThickness="0" Cursor="Hand"/>
+                            <Button Content="Sil"
+                                    Width="100"
+                                    Margin="5"
+                                    Background="#FF6347"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    Click="SilEgzersiz_Click"
+                                    BorderThickness="0" Cursor="Hand"/>
+                        </StackPanel>
+
+                        <!-- Egzersiz Listesi -->
+                        <ListView x:Name="lstEgzersizler" Background="#1E2124" Foreground="White" BorderBrush="#444" Height="150" Margin="0,10,0,0">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" Margin="5">
+                                        <TextBlock Text="{Binding EgzersizAdi}" Width="150" />
+                                        <TextBlock Text=" - " VerticalAlignment="Center" />
+                                        <TextBlock Text="{Binding KasGrubu}" Width="150" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </TabItem>
+
+                <!-- TAB 2: Kas Grubu Yönetimi -->
+                <TabItem Header="Kas Grubu Yönetimi" FontSize="15">
+                    <StackPanel Margin="20">
+                        <TextBlock Text="Kas Grubu Yönetimi" FontSize="22" FontWeight="Bold"
+                                   Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                        <Label Content="Yeni Kas Grubu:" Foreground="White"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBox x:Name="txtYeniKasGrubu" Width="200" Height="30" Margin="0,0,10,0" Background="White" Foreground="Black" BorderBrush="#7F00FF" BorderThickness="1"/>
+                            <Button Content="Ekle"
+                                    Width="100"
+                                    Background="#7F00FF"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    Click="EkleKasGrubu_Click"
+                                    BorderThickness="0" Cursor="Hand"/>
+                        </StackPanel>
+
+                        <!-- Kas Grubu Listesi -->
+                        <ListBox x:Name="lstKasGruplari" Height="100" Background="#1E2124" Foreground="White" BorderBrush="#444" />
+
+                        <!-- Kas Grubu Silme Butonu -->
+                        <Button Content="Seçili Kas Grubunu Sil"
+                                Width="200"
+                                Height="30"
+                                Background="#FF6347"
+                                Foreground="White"
+                                FontWeight="Bold"
+                                Margin="0,10,0,0"
+                                HorizontalAlignment="Center"
+                                Click="SilKasGrubu_Click"
+                                BorderThickness="0" Cursor="Hand"/>
+                    </StackPanel>
+                </TabItem>
+
+            </TabControl>
+        </Border>
+    </Grid>
+</UserControl>

@@ -1,0 +1,262 @@
+﻿<Window x:Class="Proje2.View.UyeDetayEkrani"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Üye Detayları" Height="700" Width="700"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True">
+    <Border Background="#CC1C1C1C" BorderThickness="2" CornerRadius="20" Padding="30">
+    <Grid Background="#CC1C1C1C">
+        <!-- Border for layout and styling -->
+        <Border Background="#CC1C1C1C"
+                CornerRadius="20"
+                Margin="30"
+                Padding="30"
+                BorderBrush="#6A0DAD"
+                BorderThickness="2">
+
+
+            <StackPanel Background="Transparent">
+                <!-- Header Text -->
+                    <TextBlock Text="Üye Detayları"
+                           Foreground="White"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                    <!-- Üye Detayları Form -->
+                <Grid Margin="0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Ad -->
+                        <TextBlock Text="Ad:" Foreground="#CAECFC" FontSize="18" Grid.Row="0" Grid.Column="0"/>
+                        <TextBlock x:Name="lblAd" Foreground="White" FontWeight="Bold" FontSize="18" Margin="20,0,0,10" Grid.Row="0" Grid.Column="1"/>
+
+                    <!-- Soyad -->
+                        <TextBlock Text="Soyad:" Foreground="#CAECFC" FontSize="18" Grid.Row="1" Grid.Column="0"/>
+                    <TextBlock x:Name="lblSoyad" Foreground="White" FontWeight="Bold" FontSize="18" Margin="20,0,0,10" Grid.Row="1" Grid.Column="1"/>
+
+                    <!-- Telefon -->
+                        <TextBlock Text="Telefon:" Foreground="#CAECFC" FontSize="18" Grid.Row="2" Grid.Column="0"/>
+                        <TextBlock x:Name="lblTelefon" Foreground="White" FontSize="18" Margin="20,0,0,10" Grid.Row="2" Grid.Column="1"/>
+
+                    <!-- Yaş -->
+                        <TextBlock Text="Yaş:" Foreground="#CAECFC" FontSize="18" Grid.Row="3" Grid.Column="0"/>
+                        <TextBlock x:Name="lblYas" Foreground="White" FontSize="18" Margin="20,0,0,10" Grid.Row="3" Grid.Column="1"/>
+
+                    <!-- Boy -->
+                        <TextBlock Text="Boy:" Foreground="#CAECFC" FontSize="18" Grid.Row="4" Grid.Column="0"/>
+                        <TextBlock x:Name="lblBoy" Foreground="White" FontSize="18" Margin="20,0,0,10" Grid.Row="4" Grid.Column="1"/>
+
+                    <!-- Kilo -->
+                        <TextBlock Text="Kilo:" Foreground="#CAECFC" FontSize="18" Grid.Row="5" Grid.Column="0"/>
+                        <TextBlock x:Name="lblKilo" Foreground="White" FontSize="18" Margin="20,0,0,10" Grid.Row="5" Grid.Column="1"/>
+
+                    <!-- Cinsiyet -->
+                        <TextBlock Text="Cinsiyet:" Foreground="#CAECFC" FontSize="18" Grid.Row="6" Grid.Column="0"/>
+                        <TextBlock x:Name="lblCinsiyet" Foreground="White" FontSize="18" Margin="20,0,0,10" Grid.Row="6" Grid.Column="1"/>
+
+                    <!-- Kayıt Süresi -->
+                        <TextBlock Text="Kayıt Süresi (ay):" Foreground="#CAECFC" FontSize="18" Grid.Row="7" Grid.Column="0"/>
+                        <TextBlock x:Name="lblKayitSuresi" Foreground="White" FontSize="18" Margin="20,0,0,10" Grid.Row="7" Grid.Column="1"/>
+
+                    <!-- Kategori -->
+                        <TextBlock Text="Kategori:" Foreground="#CAECFC" FontSize="18" Grid.Row="8" Grid.Column="0"/>
+                        <TextBlock x:Name="lblKategori" Foreground="White" FontSize="18" Margin="20,0,0,10" Grid.Row="8" Grid.Column="1"/>
+
+                    <!-- Doğum Tarihi -->
+                        <TextBlock Text="Doğum Tarihi:" Foreground="#CAECFC" FontSize="18" Grid.Row="9" Grid.Column="0"/>
+                        <TextBlock x:Name="lblDogumTarihi" Foreground="White" FontSize="18" Margin="20,0,0,10" Grid.Row="9" Grid.Column="1"/>
+
+                    <!-- Katılım Tarihi -->
+                        <TextBlock Text="Katılım Tarihi:" Foreground="#CAECFC" FontSize="18" Grid.Row="10" Grid.Column="0"/>
+                        <TextBlock x:Name="lblKayitTarihi" Foreground="White" FontSize="18" Margin="20,0,0,10" Grid.Row="10" Grid.Column="1"/>
+
+                    <!-- Üyelik Bitiş Tarihi -->
+                        <TextBlock Text="Üyelik Bitiş Tarihi:" Foreground="#CAECFC" FontSize="18" Grid.Row="11" Grid.Column="0"/>
+                        <TextBlock x:Name="lblBitisTarihi" Foreground="White" FontSize="18" Margin="20,0,0,10" Grid.Row="11" Grid.Column="1"/>
+
+                </Grid>
+
+            </StackPanel>
+        </Border>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,40,40">
+                <Button Width="43" Height="43" Click="BtnProgramAta_Click" Margin="7,0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border"
+                    
+                    BorderThickness="0"
+                    BorderBrush="Transparent"
+                    Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+
+                            <!-- Triggers -->
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="/Imagess/dumbell.png"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                    <!-- Normal görünüm -->
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagess/dumbell.png"/>
+                    </Button.Background>
+                </Button>
+
+                <Button Width="43" Height="43" Click="BtnDiyetEkle_Click" Margin="7,0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border"
+    
+    BorderThickness="0"
+    BorderBrush="Transparent"
+    Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+
+                            <!-- Triggers -->
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="/Imagess/balanced-diet.png"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                    <!-- Normal görünüm -->
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagess/balanced-diet.png"/>
+                    </Button.Background>
+                </Button>
+                <Button Width="43" Height="43" Click="BtnGuncelle_Click" Margin="7,0">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border"
+                    
+                    BorderThickness="0"
+                    BorderBrush="Transparent"
+                    Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+
+                            <!-- Triggers -->
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="/Imagess/pencil.png"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                    <!-- Normal görünüm -->
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagess/pencil.png"/>
+                    </Button.Background>
+                </Button>
+
+                <Button Width="48" Height="48" Click="BtnSil_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border"
+    
+    BorderThickness="0"
+    BorderBrush="Transparent"
+    Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+
+                            <!-- Triggers -->
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="/Imagess/delete3.png"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                    <!-- Normal görünüm -->
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagess/delete3.png"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+
+
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,40,40,0">
+                <Button Width="48" Height="48" Click="GeriButton_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="border"
+
+BorderThickness="0"
+BorderBrush="Transparent"
+Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+
+                            <!-- Triggers -->
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="border" Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="/Imagess/backs.png"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                    <!-- Normal görünüm -->
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Imagess/back1.png"/>
+                    </Button.Background>
+                </Button>
+
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>

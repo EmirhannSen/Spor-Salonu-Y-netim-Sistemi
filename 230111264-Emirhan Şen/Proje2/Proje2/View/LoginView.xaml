@@ -1,0 +1,99 @@
+﻿<Window x:Class="Proje2.View.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoginView" Height="550" Width="800"
+        WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+
+    <Border CornerRadius="20" BorderThickness="3">
+        <Border.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Proje2;component/Imagess/image.jpg" Stretch="UniformToFill"/>
+        </Border.Background>
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#6A0DAD" Offset="0"/>
+                <GradientStop Color="#00FFFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+
+            <Thumb Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Top" DragDelta="Top_DragDelta" Opacity="0" Height="10"/>
+            <Thumb Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" DragDelta="Bottom_DragDelta" Opacity="0" Height="10"/>
+            <Thumb Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Stretch" DragDelta="Left_DragDelta" Opacity="0" Width="10"/>
+            <Thumb Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" DragDelta="Right_DragDelta" Opacity="0" Width="10"/>
+            <Thumb Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" DragDelta="TopLeft_DragDelta" Opacity="0" Width="20" Height="20"/>
+            <Thumb Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" DragDelta="TopRight_DragDelta" Opacity="0" Width="20" Height="20"/>
+            <Thumb Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" DragDelta="BottomLeft_DragDelta" Opacity="0" Width="20" Height="20"/>
+            <Thumb Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" DragDelta="BottomRight_DragDelta" Opacity="0" Width="20" Height="20"/>
+
+            
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0">
+                <Button Content="—" Width="30" Height="30" FontSize="16" Margin="0,0,5,0"
+                        Background="Transparent" Foreground="White" BorderThickness="0"
+                        Click="Minimize_Click"/>
+                <Button Content="X" Width="30" Height="30" FontSize="16"
+                        Background="Transparent" Foreground="White" BorderThickness="0"
+                        Click="Close_Click"/>
+              
+                <Button Content="□" Width="30" Height="30" FontSize="16" 
+                        Background="Transparent" Foreground="White" BorderThickness="0"
+                        Click="Maximize_Click"/>
+            </StackPanel>
+
+          
+            <Grid Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Border Background="#CC1C1C1C" CornerRadius="15" Padding="20">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="350">
+                    
+                        <Image Source="/Proje2;component/Imagess/logo.png"
+                               Width="100" Height="100" HorizontalAlignment="Center"/>
+
+                     
+                        <TextBlock Text="ÖzelFit" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                        <TextBlock Text="Daha güçlü, daha sağlıklı bir sen için şimdi başla! Her gün bir adım daha ileri." 
+                                   FontSize="12" TextAlignment="Center" TextWrapping="Wrap" Foreground="White" Margin="0,5,0,20"/>
+
+                      
+                        <TextBlock Text="E-Posta" Foreground="White" Margin="0,0,0,5"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <Image Source="/Proje2;component/Imagess/user.png" Width="20" Height="20" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <TextBox x:Name="EmailTextBox" Height="30" Width="316" Background="White" Foreground="Black"/>
+                        </StackPanel>
+
+                      
+                        <TextBlock Text="Parola" Foreground="White" Margin="0,0,0,5"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                            <Image Source="/Proje2;component/Imagess/keyicon.png" Width="20" Height="20" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <PasswordBox x:Name="PasswordBox" Height="30" Width="317" Background="White" Foreground="Black"/>
+                        </StackPanel>
+
+                      
+                        <Button Content="GİRİŞ YAP" Height="35" Background="#7F00FF" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand" Click="LoginButton_Click"/>
+
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <TextBlock Text="Şifremi Unuttum?" Foreground="White" Margin="0,0,10,0" Cursor="Hand" MouseLeftButtonDown="ForgotPassword_Click"/>
+                            <TextBlock Text="Kaydol" Foreground="White" Cursor="Hand" MouseLeftButtonDown="Register_Click"/>
+                            
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

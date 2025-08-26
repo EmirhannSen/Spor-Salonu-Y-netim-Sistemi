@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Proje2.View.DiyetEkrani"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="500" d:DesignWidth="600">
+    <Grid Background="#80000000">
+        <Border Background="#CC1C1C1C" CornerRadius="20" Margin="30" Padding="20" BorderBrush="#7F00FF" BorderThickness="2">
+            <TabControl Background="Transparent" BorderThickness="0"
+                        FontWeight="SemiBold" Foreground="White">
+
+                <!-- Diyet Programı Ekle -->
+                <TabItem Header="Diyet Programı Ekle" FontSize="15">
+                    <StackPanel Margin="20">
+                        <TextBlock Text="Diyet Programı Ekle" FontSize="22" FontWeight="Bold"
+                                   Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                        <Label Content="Öğün Adı:" Foreground="White"/>
+                        <TextBox x:Name="txtOgunAdi" Height="30" Margin="0,5,0,10" Background="White" Foreground="Black" BorderBrush="#7F00FF" BorderThickness="1"/>
+
+                        <Label Content="Kalori Miktarı:" Foreground="White"/>
+                        <TextBox x:Name="txtKalori" Height="30" Margin="0,5,0,10" Background="White" Foreground="Black" BorderBrush="#7F00FF" BorderThickness="1"/>
+
+                        <Label Content="Öğün Zamanı Seçin:" Foreground="White"/>
+                        <ComboBox x:Name="cmbOgunZamani" Height="30" Margin="0,5,0,10" Background="White" Foreground="Black" BorderBrush="#7F00FF" BorderThickness="1">
+                            <ComboBoxItem Content="Kahvaltı"/>
+                            <ComboBoxItem Content="Öğle Yemeği"/>
+                            <ComboBoxItem Content="Akşam Yemeği"/>
+                            <ComboBoxItem Content="Ara Öğün"/>
+                        </ComboBox>
+
+                        <Button Content="Ekle"
+                                Width="100" Height="30"
+                                Background="#7F00FF"
+                                Foreground="White"
+                                FontWeight="Bold"
+                                Margin="0,10,0,0"
+                                Click="EkleDiyetProgrami_Click"
+                                BorderThickness="0"
+                                Cursor="Hand"/>
+                    </StackPanel>
+                </TabItem>
+
+                <!-- Diyet Planı Listesi -->
+                <TabItem Header="Diyet Planı Listesi" FontSize="15">
+                    <StackPanel Margin="20">
+                        <TextBlock Text="Diyet Planı Listesi" FontSize="22" FontWeight="Bold"
+                                   Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                        <ListBox x:Name="lstDiyetler" Background="#1E2124" Foreground="White" BorderBrush="#444" Height="200" Margin="0,10,0,20"/>
+
+                        <Button Content="Seçili Öğünü Sil"
+                                Width="150" Height="30"
+                                Background="#FF6347"
+                                Foreground="White"
+                                FontWeight="Bold"
+                                HorizontalAlignment="Center"
+                                Click="SilDiyetProgrami_Click"
+                                BorderThickness="0"
+                                Cursor="Hand"/>
+                    </StackPanel>
+                </TabItem>
+
+            </TabControl>
+        </Border>
+    </Grid>
+</UserControl>

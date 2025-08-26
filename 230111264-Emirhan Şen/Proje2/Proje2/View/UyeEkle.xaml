@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Proje2.View.UyeEkle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="700">
+
+    <Grid Background="#80000000">
+        <Border Background="#CC1C1C1C" CornerRadius="20" Margin="30" Padding="30" BorderBrush="#6A0DAD" BorderThickness="2">
+            <StackPanel>
+
+                <TextBlock Text="Üye Ekleme Formu" FontSize="22" FontWeight="Bold"
+                           Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <UniformGrid Columns="2" Rows="9" Margin="0,0,0,20">
+
+                    <StackPanel Margin="5">
+                        <Label Content="Ad" Foreground="White"/>
+                        <TextBox x:Name="txtAd" Height="30" Background="White" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Soyad" Foreground="White"/>
+                        <TextBox x:Name="txtSoyad" Height="30" Background="White" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Telefon" Foreground="White"/>
+                        <TextBox x:Name="txtTelefon" Height="30" Background="White" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Yaş" Foreground="White"/>
+                        <TextBox x:Name="txtYas" Height="30" Background="White" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Boy (örn. 175)" Foreground="White"/>
+                        <TextBox x:Name="txtBoy" Height="30" Background="White" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Kilo" Foreground="White"/>
+                        <TextBox x:Name="txtKilo" Height="30" Background="White" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Cinsiyet" Foreground="White"/>
+                        <ComboBox x:Name="cmbCinsiyet" Height="30" Background="White" Foreground="Black">
+                            <ComboBoxItem Content="Erkek"/>
+                            <ComboBoxItem Content="Kadın"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Kategori" Foreground="White"/>
+                        <ComboBox x:Name="cmbKategori" Height="30" Background="White" Foreground="Black"
+                                  SelectionChanged="cmbKategori_SelectionChanged"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Süre (Ay)" Foreground="White"/>
+                        <ComboBox x:Name="cmbSure" Height="30" Background="White" Foreground="Black"
+                                  SelectionChanged="cmbSure_SelectionChanged"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Kayıt Ücreti (TL)" Foreground="White"/>
+                        <TextBox x:Name="txtUcret" Height="30" Background="White" Foreground="Black" IsReadOnly="True"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Doğum Tarihi" Foreground="White"/>
+                        <DatePicker x:Name="dpDogumTarihi" Height="30" Background="White" Foreground="Black"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0">
+                        <Label Content="" Foreground="White"/>
+                        <Button Content="KAYDET" Width="150" Height="30" Background="#7F00FF" Foreground="White"
+                                FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                Click="Kaydet_Click" Cursor="Hand" BorderThickness="0"/>
+                    </StackPanel>
+
+                </UniformGrid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

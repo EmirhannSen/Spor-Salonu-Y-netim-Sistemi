@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="Proje2.View.OdemeListele"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="900">
+
+    <Grid Background="#80000000">
+        <Border Background="#CC1C1C1C" CornerRadius="20" Margin="30" Padding="30" BorderBrush="#7F00FF" BorderThickness="2">
+            <StackPanel>
+
+                <!-- Başlık -->
+                <TextBlock Text="ÖDEMELER"
+                           FontSize="26"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"/>
+
+                <!-- DataGrid -->
+                <DataGrid x:Name="dataGridOdemeler"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          SelectionMode="Single"
+                          SelectionUnit="FullRow"
+                          Margin="0,20,0,0"
+                          FontSize="14"
+                          RowHeight="35"
+                          Background="#1E2124"
+                          Foreground="Black"
+                          BorderBrush="#444"
+                          GridLinesVisibility="Horizontal"
+                          ColumnHeaderHeight="35"
+                          EnableRowVirtualization="True">
+                    <DataGrid.Columns>
+                        <!-- Ödeme Tarihi -->
+                        <DataGridTextColumn Header="Ödeme Tarihi" 
+                                            Binding="{Binding OdemeTarihi, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                                            Width="150" />
+
+                        <!-- Ödeyenin Adı Soyadı -->
+                        <DataGridTextColumn Header="Adı Soyadı" 
+                                            Binding="{Binding UyeAdiSoyad}" 
+                                            Width="150" />
+
+                        <!-- Tutar -->
+                        <DataGridTextColumn Header="Tutar" 
+                                            Binding="{Binding Tutar, StringFormat='{}{0:C}'}" 
+                                            Width="110" />
+
+                        <!-- Silme Butonu -->
+                        <DataGridTemplateColumn Header="Sil" Width="70">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Sil" 
+                                            Background="#FF6347" 
+                                            Foreground="White" 
+                                            FontWeight="Bold" 
+                                            Padding="5" 
+                                            BorderBrush="#FF6347" 
+                                            BorderThickness="1"
+                                            Click="Sil_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

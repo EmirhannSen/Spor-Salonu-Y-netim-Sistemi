@@ -1,0 +1,111 @@
+﻿<Window x:Class="Proje2.View.GuncellemeEkrani"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        mc:Ignorable="d"
+        Title="Üye Güncelleme" Height="700" Width="600"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+    <!-- Ekranın yeniden boyutlandırılmasını engellemek için eklendi -->
+
+    <Grid Background="#1E1E2F">
+        <Border Background="#2E2E3E" CornerRadius="10" Margin="40" Padding="20">
+            <Border.Effect>
+                <DropShadowEffect Color="Black" BlurRadius="10" ShadowDepth="4" Opacity="0.5"/>
+            </Border.Effect>
+
+            <!-- Ana Grid yapısı -->
+            <Grid>
+                <!-- Satırların tanımlanması -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Başlık -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Form Alanları -->
+                    <RowDefinition Height="*"/>
+                    <!-- Boş alanlar için esnek satır -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Güncelleme Butonu -->
+                </Grid.RowDefinitions>
+
+                <!-- Başlık -->
+                <TextBlock Text="Üye Güncelleme Formu"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,20"
+                           Grid.Row="0" />
+
+                <!-- Form Alanları -->
+                <UniformGrid Columns="2" Rows="6" Grid.Row="1">
+                    <StackPanel Margin="5">
+                        <Label Content="Ad" Foreground="White"/>
+                        <TextBox x:Name="txtAd" Height="30"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Soyad" Foreground="White"/>
+                        <TextBox x:Name="txtSoyad" Height="30"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Telefon" Foreground="White"/>
+                        <TextBox x:Name="txtTelefon" Height="30"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Yaş" Foreground="White"/>
+                        <TextBox x:Name="txtYas" Height="30"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Boy (örn. 1.75)" Foreground="White"/>
+                        <TextBox x:Name="txtBoy" Height="30"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <Label Content="Kilo" Foreground="White"/>
+                        <TextBox x:Name="txtKilo" Height="30"/>
+                    </StackPanel>
+
+                    <!-- Cinsiyet, Kayıt Süresi ve Kategori kaldırıldı -->
+
+                    <StackPanel Margin="5">
+                        <Label Content="Doğum Tarihi" Foreground="White"/>
+                        <DatePicker x:Name="dpDogumTarihi" Height="30"/>
+                    </StackPanel>
+
+                </UniformGrid>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Margin="0,10,0,0">
+                    <!-- Güncelleme Butonu -->
+                    <Button Content="Güncelle"
+                            Width="150"
+                            Height="40"
+                            Background="#3D90D7"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Click="GuncelleButton_Click"
+                            Cursor="Hand"
+                            BorderBrush="Transparent"
+                            Margin="10,5"/>
+
+                    <!-- İptal Butonu -->
+                    <Button Content="İptal"
+                            Width="150"
+                            Height="40"
+                            Background="#E83F25"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            Click="IptalButton_Click"
+                            Cursor="Hand"
+                            BorderBrush="Transparent"
+                            Margin="10,5"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

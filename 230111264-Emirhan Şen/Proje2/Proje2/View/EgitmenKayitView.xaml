@@ -1,0 +1,43 @@
+﻿<Window x:Class="Proje2.View.EgitmenKayitView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="600" Width="600" Title="Eğitmen Kayıt" 
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="#F5F5F5">
+        <Border Background="#FFFFFF" CornerRadius="15" Margin="30" Padding="20" BorderBrush="#6A0DAD" BorderThickness="2">
+            <StackPanel>
+
+                <TextBlock Text="Eğitmen Kayıt Formu" FontSize="22" FontWeight="Bold" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                <!-- TextBox'lar ve Etiketler -->
+                <StackPanel Margin="5">
+                    <Label Content="Ad" Foreground="Black" FontWeight="Bold"/>
+                    <TextBox x:Name="AdTextBox" Height="30" Background="White" Margin="0,5" />
+                </StackPanel>
+
+                <StackPanel Margin="5">
+                    <Label Content="Soyad" Foreground="Black" FontWeight="Bold"/>
+                    <TextBox x:Name="SoyadTextBox" Height="30" Background="White" Margin="0,5" />
+                </StackPanel>
+
+                <StackPanel Margin="5">
+                    <Label Content="Telefon" Foreground="Black" FontWeight="Bold"/>
+                    <TextBox x:Name="TelefonTextBox" Height="30" Background="White" Margin="0,5" />
+                </StackPanel>
+
+                <StackPanel Margin="5">
+                    <Label Content="Email" Foreground="Black" FontWeight="Bold"/>
+                    <TextBox x:Name="EmailTextBox" Height="30" Background="White" Margin="0,5" />
+                </StackPanel>
+
+                <!-- Kaydet ve İptal Butonları -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                    <Button Content="Kaydet" Width="100" Height="40" Background="#7F00FF" Foreground="White" FontWeight="Bold" Click="Kaydet_Click"/>
+                    <Button Content="İptal" Width="100" Height="40" Background="#B0BEC5" Foreground="White" FontWeight="Bold" Margin="10,0,0,0" Click="Iptal_Click"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

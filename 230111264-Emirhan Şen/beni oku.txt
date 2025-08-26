@@ -1,0 +1,42 @@
+
+Proje Hakkında
+---------------------------
+Bu proje C# (WPF) ve MySQL veri tabanı kullanılarak oluşturulan Spor Salonu Yönetim Sistemi'dir.
+
+Veritabanı Bilgileri
+---------------------------
+Veritabanı Sunucusu (Server): localhost
+Port: 3306
+Veritabanı Adı: ssyonetim
+Veritabanı Kullanıcı Adı (UID): root
+Veritabanı Şifresi (PWD): My19db03
+
+Veritabanının Kullanımı
+---------------------------
+1. MySQL sunucunuzu (ör. XAMPP, MySQL Service) baslatın.
+2. Eğer veri tabanı daha önce oluşturulmadıysa:
+   - MySQL console, cmd, terminal ya da MySQL Workbench gibi bir istemci açın.
+   - Aşağıdaki sorguyla veri tabanı oluşturun:
+
+   CREATE DATABASE ssyonetim;
+
+Veritabanının Projeye Bağlanması
+---------------------------
+Projede MySQL veri tabanıyla bağlantı, connectionString içinde aşağıdaki gibi yapılmıştır:
+
+string connectionString = "Server=localhost;Port=3306;Database=ssyonetim;Uid=root;Pwd=My19db03;";
+
+Bu bilgileri kendi bilgisayarınıza göre değişebilir (port, password gibi).
+
+Projeyi Başlatma
+---------------------------
+1. Visual Studio'da Projeyi Açın.
+2. Veritabanının açık ve düzgün çalıştığından emin olun.
+3. Uygulamayı F5 tuşuyla ya da Start butonuyla başlayın.
+
+Egər veri tabanı hatasında kalınırsa:
+- ConnectionString bilgisini kontrol edin.
+- MySQL sunucusunun aktif olup olmadığını doğrulayın.
+- `ssyonetim` veri tabanında ilgili tablo ve alanlarının oluşturulup oluşturulmadığını kontrol edin.
+
+İyi çalışmalar! 
